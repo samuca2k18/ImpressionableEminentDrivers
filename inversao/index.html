@@ -1,0 +1,14 @@
+<meta charset="UTf-8">
+<script>
+  var n = prompt("informe um número: ");
+  var i = 0;
+  var inverso = 0;
+  var resto;
+  while(i < n.length){
+    resto = n % 10;
+    inverso = inverso * 10 + resto;
+    n = (n - resto) / 10;
+    i = i + 1;
+  }
+  document.write("O inverso de " + n + " é " + inverso);
+</script>

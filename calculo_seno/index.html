@@ -1,0 +1,24 @@
+<script>
+  function fatorial(n){
+    var fat = 1;
+    for(var i = n;i >= 1;i--){
+      fat = fat * i;
+      
+    }
+    return fat;
+    
+  }
+  var x = prompt("Informe o valor de x: ");
+  var n = prompt("informe o numero de termos da serie: ");
+  var termo;
+  var sinal = 1;
+  var j = 1;
+  var seno = 0;
+  for(var i = 1;i <= n;i++){
+    termo = Math.pow(x,j)/fatorial(j);
+    seno = seno + sinal * termo;
+    sinal = sinal * (-1);
+    j = j + 2;
+  }
+  document.write(seno.toFixed(2));
+</script>

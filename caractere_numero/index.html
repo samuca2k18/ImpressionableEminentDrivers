@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<script> 
+var sequencia = prompt("Informe uma sequencia de caracteres: ");
+  var caractere;
+  var codigo;
+  var numero = 0;
+  var n = sequencia.length;
+
+  for(var i = 0;i < n;i++){
+    caractere = sequencia.charAt(i);
+    codigo = caractere.charCodeAt;
+    numero = numero * 10 + (codigo - 48);
+  }
+
+  document.write("O numero decimal corresponde a: " + numero);
+</script>

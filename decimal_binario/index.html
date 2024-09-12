@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<script>
+  var n = prompt("informe um número decimal: ");
+  var q = n;
+  var r = new Array(100);
+  var i = 0;
+
+  while(q > 0){
+    r[i] = q % 2;
+    q = Math.floor(q / 2);
+    i++;
+  }
+
+  document.write("O número " + n + " em binário é: ");
+  while(i > 0){
+    i--;
+    document.write(r[i]);
+  }
+</script>
