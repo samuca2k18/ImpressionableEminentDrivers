@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Quicksort em JavaScript</title>
+</head>
+<body>
+    <script>
+        // Solicita ao usuário que insira uma lista de números separados por vírgula
+        var numeros = prompt("Informe uma lista de números separados por vírgula: ");
+
+        // Converte a string de entrada em um array de números
+        var array = numeros.split(",").map(Number);
+
+        // Função para implementar o Quicksort
+        function quicksort(arr) {
+            if (arr.length <= 1) {
+                return arr;
+            }
+
+            var pivot = arr[Math.floor(arr.length / 2)]; // Seleciona o pivô
+            var esquerda = []; // Elementos menores que o pivô
+            var direita = [];  // Elementos maiores que o pivô
+
+            for (var i = 0; i < arr.length; i++) {
+                if (i === Math.floor(arr.length / 2)) continue; // Ignora o pivô na comparação
+                if (arr[i] < pivot) {
+                    esquerda.push(arr[i]);
+                } else {
+                    direita.push(arr[i]);
+                }
+            }
+
+            // Recursivamente ordena as sublistas e combina com o pivô
+            return quicksort(esquerda).concat([pivot], quicksort(direita));
+        }
+
+        // Chama a função Quicksort e armazena o resultado
+        var sortedArray = quicksort(array);
+
+        // Exibe o array ordenado na página
+        document.write("Array ordenado: " + sortedArray.join(", "));
+    </script>
+</body>
+</html>

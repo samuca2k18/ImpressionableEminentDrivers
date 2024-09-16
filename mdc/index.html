@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo de MDC</title>
+</head>
+<body>
+    <script>
+        // Solicita dois números ao usuário
+        var n1 = parseInt(prompt("Informe o primeiro número: "));
+        var n2 = parseInt(prompt("Informe o segundo número: "));
+
+        // Verifica se os números são válidos
+        if (isNaN(n1) || isNaN(n2)) {
+            document.write("Por favor, insira números válidos.");
+        } else {
+            // Função para calcular o MDC usando o Algoritmo de Euclides
+            function calcularMDC(a, b) {
+                while (b != 0) {
+                    var resto = a % b;
+                    a = b;
+                    b = resto;
+                }
+                return a;
+            }
+
+            // Calcula o MDC dos dois números
+            var mdc = calcularMDC(n1, n2);
+
+            // Exibe o resultado
+            document.write("O Máximo Divisor Comum de " + n1 + " e " + n2 + " é " + mdc);
+        }
+    </script>
+</body>
+</html>
